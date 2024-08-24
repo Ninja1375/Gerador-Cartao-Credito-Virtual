@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Cartão de Crédito Virtual</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Cartão de Crédito Virtual</h1>
+        <div class="input-group">
+            <label for="card-holder-input">Nome do Titular:</label>
+            <input type="text" id="card-holder-input" placeholder="Nome do Titular">
+        </div>
+        <div class="input-group">
+            <label for="expiry-date-input">Validade (MM/AA):</label>
+            <input type="text" id="expiry-date-input" placeholder="MM/AA">
+        </div>
+        <div class="input-group">
+            <label for="cvv-input">CVV:</label>
+            <input type="text" id="cvv-input" placeholder="CVV">
+        </div>
+        <button onclick="generateCard()">Gerar Cartão</button>
+        <button onclick="toggleCardSide()">Alternar Lado</button>
+        <button onclick="downloadCard()">Baixar Cartão</button>
+        <div class="card-container">
+            <div class="card" id="card">
+                <div id="card-front" class="card-side front">
+                    <div id="card-number" class="card-detail"></div>
+                    <div id="card-holder" class="card-detail">NOME DO TITULAR</div>
+                    <div id="expiry-date" class="card-detail">VALIDADE: 12/25</div>
+                </div>
+                <div id="card-back" class="card-side back">
+                    <div class="magstripe"></div>
+                    <div id="cvv" class="card-detail">CVV: 123</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
